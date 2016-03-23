@@ -1,0 +1,29 @@
+#--------------#
+# => Tier 1 <= #
+#--------------#
+
+-> change qwerty to azerty [DONE]
+-> access box rooter interface [DONE]
+-> change raspberry name [DONE]
+-> test ssh connection (over LAN) [DONE]
+-> Create User
+-> Change password for pi
+-> Install web Server
+
+
+#--------------#
+# => Tier 2 <= #
+#--------------#
+
+-> Fix Ip adress (active DDNS)
+-> enable ssh over the internet
+-> enable web server over the internet
+-> port forwarding
+
+
+#--------------#
+# => Tier 3 <= #
+#--------------#
+
+-> Test MINTM (man-in-the-middle) on LAN
+
