@@ -6,9 +6,9 @@
 -> access box rooter interface [DONE]
 -> change raspberry name [DONE]
 -> test ssh connection (over LAN) [DONE]
--> Create User
+-> Create User [DONE]
 -> Change password for pi
--> Install web Server
+-> Install web Server [DONE]
 
 
 #--------------#
@@ -19,6 +19,7 @@
 -> enable ssh over the internet
 -> enable web server over the internet
 -> port forwarding
+-> sending email with a python programm
 
 
 #--------------#
