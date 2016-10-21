@@ -16,10 +16,10 @@ use Cwd;
 
 # TODO : Lister les dossiers qui contiennent le code source
 # TODO : Definir un template Latex
+# TODO : créer un dossier dans lequel écrire tout les fichier.tex
 
 
-
-# Variable
+# Variables
 my $directoryName; # Chemin absolue du projet
 my @directoryNameInList; # variable intermediaire 
 my $projectName; # Nom du projet
@@ -31,7 +31,7 @@ my $className; # Nom de la classe traite
 my $portee; # Portee des methodes ou variables lues
 my $methodName; # Nom de la methode en cours de lecture
 my @methodNameInList; # Variable intermediaire
-my $docName; # nom du fichier latex dans lequel est ecrit le rapport
+my $docName; # nom du dossier dans lequel est ecrit le rapport (tout les fichiers .tex)
 
 
 
@@ -41,8 +41,8 @@ $directoryName = getcwd();
 @directoryNameInList = split("/", $directoryName);
 $projectName = $directoryNameInList[-1];
 
-# Attribution nom pour le document latex
-$docName = $projectName . "_doc.tex";
+# Attribution nom pour le dossier contenant les fichiers tex
+$docName = $projectName . "_DOCUMENTATION";
 
 # Separer les fichiers des dossiers
 @listOfElementsInFolder = glob("*");
@@ -131,11 +131,23 @@ foreach my $file (@listOfFilesInFolder){
 	# Python
 	}
 	elsif($file =~ m/.py/){
-	
+	}
+	# Looking for README
+	elsif($file =~ m/README.txt/){
 
 	}
-
 }
+
+
+# Creation du dossier pour le rapport
+mkdir $docName
+open(my $fhtitle, ">", "$docName/title.tex") or die "can't open title.tex file";
+
+close($fhtitle);
+
+
+
+
 
 
 
