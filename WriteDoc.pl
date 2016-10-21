@@ -14,23 +14,45 @@ use Cwd;
 #
 
 
+# TODO : Lister les dossiers qui contiennent le code source
+# TODO : Definir un template Latex
+
+
 
 # Variable
 my $directoryName; # Chemin absolue du projet
 my @directoryNameInList; # variable intermediaire 
 my $projectName; # Nom du projet
-my @listOfFilesInFolder; # Liste des fichiers dans le dossiers
+my @listOfElementsInFolder; # liste des dossier + fichier dans le dossier
+my @listOfFilesInFolder; # Liste des fichiers dans le dossier
+my @listOfFoldersInFolder; # liste des dossiers dans le dossier
 my $ProgLanguage; # Langage de programation utilise (assume qu'il n'y en a cas)
 my $className; # Nom de la classe traite
 my $portee; # Portee des methodes ou variables lues
 my $methodName; # Nom de la methode en cours de lecture
 my @methodNameInList; # Variable intermediaire
+my $docName; # nom du fichier latex dans lequel est ecrit le rapport
+
+
+
 
 # Identification du nom du projet (i.e nom du dossier).
 $directoryName = getcwd();
 @directoryNameInList = split("/", $directoryName);
 $projectName = $directoryNameInList[-1];
 
+# Attribution nom pour le document latex
+$docName = $projectName . "_doc.tex";
+
+# Separer les fichiers des dossiers
+@listOfElementsInFolder = glob("*");
+foreach my $file (@listOfElementsInFolder){
+	if (-f $file){
+		push(@listOfFilesInFolder, $file);
+	}elsif(-d $file){
+		push(@listOfFoldersInFolder, $file);
+	}
+}
 
 # Identification du langage utilise
 @listOfFilesInFolder = glob("*");
@@ -105,6 +127,12 @@ foreach my $file (@listOfFilesInFolder){
 
 	# JAVA
 	}elsif($file =~ m/.java/){
+
+	# Python
+	}elsif($file =~ m/.py/){
+	
+
+	{
 
 	}
 
