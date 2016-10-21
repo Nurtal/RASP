@@ -129,10 +129,9 @@ foreach my $file (@listOfFilesInFolder){
 	}elsif($file =~ m/.java/){
 
 	# Python
-	}elsif($file =~ m/.py/){
+	}
+	elsif($file =~ m/.py/){
 	
-
-	{
 
 	}
 
