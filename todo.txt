@@ -20,6 +20,7 @@
 -> enable web server over the internet
 -> port forwarding
 -> sending email with a python programm
+-> Install Git server
 
 
 #--------------#
